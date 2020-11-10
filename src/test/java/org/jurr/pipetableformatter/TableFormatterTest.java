@@ -18,6 +18,7 @@ class TableFormatterTest
 {
 	private StringBuilder in;
 	private List<String> expected;
+	private final String LINE_SEPARATOR = System.getProperty("line.separator");
 
 	@Test
 	void testNoFormatting()
@@ -160,7 +161,7 @@ class TableFormatterTest
 	private void in(final String line)
 	{
 		in.append(line);
-		in.append('\n');
+		in.append(LINE_SEPARATOR);
 	}
 
 	private void out(final String line)
@@ -179,7 +180,7 @@ class TableFormatterTest
 		tableFormatter.format(sr);
 		tableFormatter.close();
 
-		final String[] actual = new String(baos.toByteArray(), StandardCharsets.UTF_8).split("\n");
+		final String[] actual = new String(baos.toByteArray(), StandardCharsets.UTF_8).split(LINE_SEPARATOR);
 
 		assertEquals(expected.size(), actual.length, "The number of lines differs");
 
