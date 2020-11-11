@@ -160,7 +160,7 @@ class TableFormatterTest
 	private void in(final String line)
 	{
 		in.append(line);
-		in.append('\n');
+		in.append(System.lineSeparator());
 	}
 
 	private void out(final String line)
@@ -179,7 +179,7 @@ class TableFormatterTest
 		tableFormatter.format(sr);
 		tableFormatter.close();
 
-		final String[] actual = new String(baos.toByteArray(), StandardCharsets.UTF_8).split("\n");
+		final String[] actual = new String(baos.toByteArray(), StandardCharsets.UTF_8).split(System.lineSeparator());
 
 		assertEquals(expected.size(), actual.length, "The number of lines differs");
 
