@@ -3,7 +3,7 @@
 
 	<groupId>org.jurr.pipetableformatter</groupId>
 	<artifactId>PipeTableFormatter</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1-SNAPSHOT</version>
 	<name>Pipe table formatter</name>
 	<description>A formatter for JBehave files that formats the tables</description>
 	<url>https://github.com/Jurrie/pipe-table-formatter</url>
@@ -28,7 +28,7 @@
 		<connection>scm:git:git@github.com:Jurrie/pipe-table-formatter.git</connection>
 		<developerConnection>scm:git:git@github.com:Jurrie/pipe-table-formatter.git</developerConnection>
 		<url>https://github.com/Jurrie/pipe-table-formatter/tree/master</url>
-		<tag>PipeTableFormatter-1.0.0</tag>
+		<tag>HEAD</tag>
 	</scm>
 
 	<properties>
