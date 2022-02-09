@@ -37,15 +37,15 @@
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 
-		<junit.jupiter.version>5.7.2</junit.jupiter.version>
-		<junit.platform.version>1.7.2</junit.platform.version>
+		<junit.jupiter.version>5.8.2</junit.jupiter.version>
+		<junit.platform.version>1.8.2</junit.platform.version>
 	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>com.beust</groupId>
 			<artifactId>jcommander</artifactId>
-			<version>1.81</version>
+			<version>1.82</version>
 		</dependency>
 
 		<dependency>
@@ -64,6 +64,7 @@
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-engine</artifactId>
 			<version>${junit.jupiter.version}</version>
+			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.junit.platform</groupId>
