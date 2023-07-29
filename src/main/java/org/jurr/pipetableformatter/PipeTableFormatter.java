@@ -68,6 +68,25 @@ public class PipeTableFormatter
 		}
 	}
 
+	public String pipeTablesInString(final String input)
+	{
+		try (final ByteArrayOutputStream baos = new ByteArrayOutputStream(input.length()); //
+				final PrintStream ps = new PrintStream(baos, false, StandardCharsets.UTF_8.name()))
+		{
+			final TableFormatter table = new TableFormatter(ps);
+
+			table.format(input);
+
+			table.close();
+			final byte[] output = baos.toByteArray();
+			return new String(output, StandardCharsets.UTF_8.name());
+		}
+		catch (IOException e)
+		{
+			throw new PipeTableFormatterException("Error during reading or writing of string", e);
+		}
+	}
+
 	private void atomicallyWriteFile(final Path path, final byte[] bytes)
 	{
 		final Path directory = path.getParent();

@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.io.Reader;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class TableFormatter implements AutoCloseable
@@ -66,6 +67,12 @@ public class TableFormatter implements AutoCloseable
 				readLine(line);
 			}
 		}
+	}
+
+	public void format(final String input)
+	{
+		final String[] lines = input.split(System.lineSeparator());
+		Arrays.stream(lines).forEach(this::readLine);
 	}
 
 	private void readLine(final String line)

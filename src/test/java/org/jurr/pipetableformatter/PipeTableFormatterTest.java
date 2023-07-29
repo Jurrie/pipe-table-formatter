@@ -1,5 +1,6 @@
 package org.jurr.pipetableformatter;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertIterableEquals;
 
 import java.io.IOException;
@@ -31,5 +32,25 @@ class PipeTableFormatterTest
 		final List<String> actual = Files.readAllLines(testFile, StandardCharsets.UTF_8);
 
 		assertIterableEquals(expected, actual);
+	}
+
+	@Test
+	void testPipeTablesInString()
+	{
+		// Given
+		final String input = "Table is derived from the Latin word \"Tabula\" which means a plank or a flat piece of board." + System.lineSeparator()
+				+ "And as luck would have it, the next line IS a table!!" + System.lineSeparator()
+				+ "|I|Am|A|Table|" + System.lineSeparator()
+				+ "|I|Am|A|Row|" + System.lineSeparator()
+				+ "So there." + System.lineSeparator();
+		final String expected = input
+				.replace("|I|Am|A|Table|", /**/ "| I | Am | A | Table |")
+				.replace("|I|Am|A|Row|", /*  */ "| I | Am | A | Row   |");
+
+		// When
+		final String actual = new PipeTableFormatter().pipeTablesInString(input);
+
+		// Then
+		assertEquals(expected, actual);
 	}
 }
