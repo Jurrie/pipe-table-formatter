@@ -1,0 +1,11 @@
+This is a file
+That has content
+And a pipe table - look!
+|Col1|Col2|
+|Data1|Data2|
+|Wut - another row?|
+Yeah, and because bytes are almost free: here comes another table! (It's also because we wanna test multiple tables in one file.)
+|HeaderA|HeaderB|
+|Row1A|Row1B|
+|Row2A|Row2B|
+Oh, and there's a footer as well, but you just read it...
